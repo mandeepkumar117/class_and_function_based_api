@@ -168,6 +168,113 @@ def product_detail(request, id):
             status=status.HTTP_204_NO_CONTENT
         )
 
+
+# ye niche ka bhi same kaam karta hai.ye ek hi function ke through hai
+
+# @api_view(['GET', 'POST', 'PUT', 'PATCH', 'DELETE'])
+# def products(request, id=None):
+
+#     # GET - All Products
+#     if request.method == 'GET' and id is None:
+
+#         product = Product.objects.all()
+
+#         serializer = ProductSerializer(
+#             product,
+#             many=True
+#         )
+
+#         return Response(serializer.data)
+
+#     # POST - Create Product
+#     if request.method == 'POST' and id is None:
+
+#         serializer = ProductSerializer(
+#             data=request.data
+#         )
+
+#         if serializer.is_valid():
+
+#             serializer.save()
+
+#             return Response(
+#                 serializer.data,
+#                 status=status.HTTP_201_CREATED
+#             )
+
+#         return Response(
+#             serializer.errors,
+#             status=status.HTTP_400_BAD_REQUEST
+#         )
+
+#     # Find Product for ID-based operations
+#     try:
+#         product = Product.objects.get(id=id)
+
+#     except Product.DoesNotExist:
+
+#         return Response(
+#             {"error": "Product not found"},
+#             status=status.HTTP_404_NOT_FOUND
+#         )
+
+#     # GET - Single Product
+#     if request.method == 'GET':
+
+#         serializer = ProductSerializer(product)
+
+#         return Response(serializer.data)
+
+#     # PUT - Full Update
+#     if request.method == 'PUT':
+
+#         serializer = ProductSerializer(
+#             product,
+#             data=request.data
+#         )
+
+#         if serializer.is_valid():
+
+#             serializer.save()
+
+#             return Response(serializer.data)
+
+#         return Response(
+#             serializer.errors,
+#             status=status.HTTP_400_BAD_REQUEST
+#         )
+
+#     # PATCH - Partial Update
+#     if request.method == 'PATCH':
+
+#         serializer = ProductSerializer(
+#             product,
+#             data=request.data,
+#             partial=True
+#         )
+
+#         if serializer.is_valid():
+
+#             serializer.save()
+
+#             return Response(serializer.data)
+
+#         return Response(
+#             serializer.errors,
+#             status=status.HTTP_400_BAD_REQUEST
+#         )
+
+#     # DELETE - Delete Product
+#     if request.method == 'DELETE':
+
+#         product.delete()
+
+#         return Response(
+#             {"message": "Product deleted successfully"},
+#             status=status.HTTP_204_NO_CONTENT
+#         )
+
+
 # yahan se class based api hai
 
 # class ProductViewSet(viewsets.ModelViewSet):
